@@ -9,4 +9,7 @@ class UserForm(forms.ModelForm):
         model = models.UserProfile
         fields = ['email', 'name']
         
+
+
+        
     
