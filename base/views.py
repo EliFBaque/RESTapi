@@ -24,15 +24,15 @@ def home(request):
 def contact(request):
     """contact page"""
     
-    return render(request, 'containers/contact.html')
+    return render(request, 'base/containers/contact.html')
 
 
 def login(request):
     """login page"""
-    return render(request, 'registration/login.html')
+    return render(request, 'base/registration/login.html')
 
 def signin(request):
     """signin page"""
-    return render(request, 'registration/signin.html')
+    return render(request, 'base/registration/signin.html')
 
 
