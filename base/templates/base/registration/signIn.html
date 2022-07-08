@@ -2,6 +2,27 @@
 
     
     {% block content %}
-    
         <h1>Seccion del Sign In</h1>
+        
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="name" required>
+
+            <label><b>Username</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <input type="submit" value="OK">
+        </form>
+
+        {% for user in users %}
+            <div class="user">
+            <div class="user-name">{{ user.name }}</div>
+            <div class="user-email">{{ user.email }}</div>
+            <div class="user-phone">{{ user.password }}</div>
+
+        {% endfor %}
     {% endblock %}

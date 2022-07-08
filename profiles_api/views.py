@@ -1,9 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import viewsets
+
+
+from rest_framework import generics, mixins, status, viewsets, filters
+
+
 from rest_framework.authentication import TokenAuthentication
-from rest_framework import filters
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from rest_framework.permissions import IsAuthenticatedOrReadOnly # IsAuthenticated If i want only to logged users to see the feed.
@@ -99,7 +101,7 @@ class HelloViewSet(viewsets.ViewSet):
         """Handle removing an object"""
         return Response({'http_method': 'DELETE'})
     
-class UserProfileViewSet(viewsets.ModelViewSet):
+class UserProfileViewSet(viewsets.ModelViewSet): # Esto!!!!!!!!!!
     """Handle creating and updating profiles"""
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
@@ -126,3 +128,12 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     def perfom_create(self, serializer):
         """Sets the user profile to the logged in user"""
         serializer.save(user_profile=self.request.user)
+        
+
+class UserList(generics.ListCreateAPIView):
+    queryset = models.UserProfile.objects.all()
+    serializer_class = serializers.UserProfileSerializer
+    
+    
+   
+    

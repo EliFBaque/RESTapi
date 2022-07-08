@@ -3,7 +3,13 @@
     
     
     {% block content %}
+        {% for user in users %}
+            <div class="user">
+            <div class="user-name">{{ user.name }}</div>
+            <div class="user-email">{{ user.email }}</div>
+            <div class="user-phone">{{ user.password }}</div>
 
+        {% endfor %}
         <div class="aboutUs">Presentacion basica</div>
         <div class="servicios">Servicios prestados por nuestra web</div>
         <div class="proceso">Proceso , contacto paso a paso</div>

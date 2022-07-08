@@ -1,5 +1,5 @@
 <nav>
-    <div class="icon">RepairService</div>
+    <div class="icon">Repair<b style="color: #1363DF;">S</b>ervice</div>
     <div class="search_box">
         <input type="search" placeholder="Search here">
         <span class="fa fa-search"></span>
@@ -9,6 +9,7 @@
         <li><a href="">contact</a></li>
         <li><a href="">services</a></li>
         <li><a href="">about</a></li>
-        <li><a href="">login here</a></li>
+        <li><a href="{% url 'login' %}">Login here</a></li>
+        <li><a href="{% url 'signin' %}">sign in here</a></li>
     </ol>
 </nav>

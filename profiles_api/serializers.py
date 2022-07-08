@@ -10,7 +10,6 @@ class HelloSerializer(serializers.Serializer):
  
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializes a user profile object""" 
-    
     class Meta:
         model = models.UserProfile
         fields = ('id', 'email', 'name', 'password')

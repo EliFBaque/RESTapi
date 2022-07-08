@@ -2,6 +2,31 @@
 
     
     {% block content %}
-    
-        <h1>Seccion del Login</h1>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>
+                    {{ message }}
+                </li>
+            {% endfor %}
+
+        </ul>
+        {% endif %}
+
+
+
+
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                <label>Username:</label>
+                <input type="text" name="email" placeholder="Enter email" />
+                
+                <label>Password:</label>
+                <input type="text" name="name" placeholder="Enter name">
+                
+                <input type="submit" value="OK">
+            </form>
+        </div>
     {% endblock %}
